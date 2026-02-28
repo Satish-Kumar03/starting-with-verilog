@@ -1,12 +1,14 @@
 module rsflipflop  (
-    input d,clk, output reg q,qbar
+    input d,clk,rst, output reg q, output qbar
 );
-   //assign qbar = ~q;
+   assign qbar = ~q;
 
-   always @(posedge clk)
+    always @(posedge clk or posedge rst)
         begin
-          q = d;
-          qbar = ~d;
+            if(rst) q<=1'b0;
+            else begin 
+                q<=d;
+            end
         end
         
 endmodule
