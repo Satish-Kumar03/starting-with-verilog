@@ -15,7 +15,7 @@ module full_adder(sum,cout,a,b,cin);
     input a,b,cin;
     output sum, cout;
     wire t1,t2;
-
+    //assign {sum,carry} = a+b+cin;
     sum s1(t1,a,b);
     sum s2(sum,t1,cin);
     carry c(cout,a,b,cin);
