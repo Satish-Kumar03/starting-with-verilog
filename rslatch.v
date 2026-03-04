@@ -12,3 +12,19 @@ module rsflipflop  (
         end
         
 endmodule
+
+
+// primitive dflip(q,rst,clk,d);
+//     input rst,clk,d;
+//     output reg q;
+    
+//     initial q=0;
+//     table 
+//         // rst  clk   d : curr_state : next_state  // mind the sequence of input declared on primitive 
+//             1    ?    ? : ? : 0;
+//           (10)   ?    ? : ? : -;
+//             0   (01)  0 : ? : 0;
+//             0   (01)  1 : ? : 1;
+//             0   (10)  ? : ? : -;
+//     endtable 
+// endprimitive 
