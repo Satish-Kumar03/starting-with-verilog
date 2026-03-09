@@ -27,6 +27,7 @@ module fsm(input clk,clr,x, output reg z);
              z = 1;
              ns = x ?  s1 : s0;
       end
+    endcase
       end 
 endmodule 
       
