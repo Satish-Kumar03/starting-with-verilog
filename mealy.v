@@ -1,4 +1,4 @@
-module fsm(input clk,clr,x, output reg z);
+module fsm(input clk,clr,x, output reg z);     // detect sequence 1001
   reg [1:0] ps, ns;
   //reg ns,ps;
   parameter s0:0; s1:1; s2:2; s3:3;
@@ -9,22 +9,22 @@ module fsm(input clk,clr,x, output reg z);
       else ps <= ns;
     end 
 
-  always @(x or ps) begin 
+  always @(x,ps) begin 
     case(ps) 
       s0 : begin 
-             z = 0;
+             z = x ? 0 : 0;
              ns = x ? s1 : s0;
       end
       s1 : begin 
-             z=0;
+             z = x ? 0 : 0;
              ns = x ? s1 : s2;
       end 
       s2 : begin 
-             z = 0;
+             z = x ? 0 : 0;
              ns = x ?  s1 : s3;
       end
       s3: begin 
-             z = 1;
+             z = x ? 1 : 0;
              ns = x ?  s1 : s0;
       end
     endcase
