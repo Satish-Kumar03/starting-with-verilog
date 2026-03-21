@@ -1,7 +1,7 @@
 module fsm(input clk,clr,x, output reg z);     // detect sequence 1001
   reg [1:0] ps, ns;
   //reg ns,ps;
-  parameter s0:0; s1:1; s2:2; s3:3;
+  parameter s0=0, s1=1, s2=2, s3=3;
 
   always @(posedge clk or posedge clr)
     begin 
