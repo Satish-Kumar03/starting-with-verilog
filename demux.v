@@ -3,28 +3,29 @@ module demux(x,sel,out);
     input [1:0] sel;
     output [3:0] out;
     reg [3:0] out;
-
+    pamareter s0=0, s1=1, s2=2, s3=3;
+    
     always @(sel,x) begin
         case (sel)
-          2'b00  : begin
+          s0  : begin
             out[0] = x;
             out[1] = 1'b0;
             out[2] = 1'b0;
             out[3] = 1'b0;
           end
-          2'b01 : begin
+          s1 : begin
             out[0] = 1'b0;
             out[1] = x;
             out[2] = 1'b0;
             out[3] = 1'b0;
           end
-          2'b10 : begin
+          s2 : begin
             out[0] = 1'b0;
             out[1] = 1'b0;
             out[2] = x;
             out[3] = 1'b0;
           end
-          2'b11 : begin
+          s3 : begin
             out[0] = 1'b0;
             out[1] = 1'b0;
             out[2] = 1'b0;
