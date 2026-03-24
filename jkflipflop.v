@@ -2,12 +2,12 @@ module JKflipflop (
     input j,k,clk, output reg q, output qbar      // this is when assign statement is used, maybe ok 
     // inout j,k,clk, output reg q,qbar
 );
-
+    assign qbar = ~q;    // all assignemnts should be with port declarations \
     always @(posedge clk) begin
         q <= (j& ~q) | (~k & q);
         
     end
-    assign qbar = ~q;
+    
 
     // always @(posedge clk) begin             // this is purely sequential circuit
     //     case({j,k})
