@@ -1,6 +1,6 @@
 module enc_test;
     reg [7:0] x; wire [2:0] y;
-    pri_encoder DUT(.in(x), .out(y));
+    pri_encoder ENC(.in(x), .out(y));
 
     initial begin
         $monitor($time, "in = %b, out = %b", x,y);
