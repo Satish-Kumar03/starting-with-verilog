@@ -9,10 +9,10 @@ module ALU2 #(
            3'b001 : out = x-y;
            3'b010 : out = x*y;
            3'b011 : out = x/y;
-           3'b100 : out = x^y;
+           3'b100 : out = x^y;        // it is xor not exponent
            3'b101 : out = x%y;
-           3'b110 : out = x << 1;
-           3'b111 : out = x >> 1;
+            3'b110 : out = x << 1;   // exponentiation, (multiply 2)
+           3'b111 : out = x >> 1;    // divide by 2
 
             default: out = 0;
         endcase
