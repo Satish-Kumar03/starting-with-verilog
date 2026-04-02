@@ -8,7 +8,7 @@ module mem1 (
     reg [data_size-1:0] data;
     reg [data_size-1:0] mem[0:mem_size-1];
     reg [add_size-1:0] addr;
-    output [data_size-1:0] read, write;
+    //output [data_size-1:0] read, write;
 
     assign data_out = (cs && wr) : data ? 8'bz;
     
